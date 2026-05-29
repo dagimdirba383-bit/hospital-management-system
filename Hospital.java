@@ -1,4 +1,4 @@
-public class hospital {
+public class Hospital {
   
   private String hospitalName;
   
@@ -7,11 +7,11 @@ public class hospital {
   }
 
   public void showHospitalName() {
-    System.out.println("Hospital Name: " + hospitalname);
+    System.out.println("Hospital Name: " + hospitalName);
   }
   
   public void openHospital() {
-    System.out.println(Hospital is now open.");
+        System.out.println("Hospital is now open.");
   }
     public void closeHospital() {
         System.out.println("Hospital is now closed.");
