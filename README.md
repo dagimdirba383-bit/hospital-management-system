@@ -102,7 +102,7 @@ When you run the program you get a menu:
 
 ---
 
-## ✅ Evaluation Checklist
+## ✅ completed tasks
 
 - [x] Classes and Objects (V1.0 / V2.0)
 - [x] Encapsulation — private fields + getters (V2.0)
