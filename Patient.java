@@ -23,7 +23,7 @@ public class Patient extends Person {
     System.out.println("Patient is taking medicine.");
   }
 
-  public void paybill() {
+  public void payBill() {
     System.out.println("Patient paid the hospital bill");
   }
 }
