@@ -1,29 +1,26 @@
 public class Doctor extends Person {
+    private String specialization;
 
-  private String specialization;
+    public Doctor(String name, int age, String specialization) {
+      
+        super(name, age); // V3.0 - calls parent constructor
+        this.specialization = specialization;
+    }
 
-  public Doctor(String name, int age, String specialization) {
-    super(name, age);
-    this.specialization = specialization;
-  }
+    public String getSpecialization() { return specialization; }
 
-  public String getSpecialization() {
-    return specialization;
-  }
+  
+    public void treat(String patientName) {
+        System.out.println("Dr. " + getName() + " is treating " + patientName);
+    }
 
-  public void setSpecialization(String specialization) {
-    this.specialization = specialization;
-  }
+    public void treat(String patientName, String diagnosis) {
+        System.out.println("Dr. " + getName() + " diagnosed " + patientName + " with " + diagnosis);
+    }
 
-  public void displayRole() {
-    System.out.println("I am a Doctor.");
-  }
-
-  public void treatPatient() {
-    System.out.println("Doctor is treating a patient.");
-  }
-
-  public void prescribeMedicine() {
-    System.out.println("Medicine prescribed.");
-  }
+    
+    @Override
+    public void displayInfo() {
+        System.out.println("Doctor  : " + getName() + " | Age: " + getAge() + " | Spec: " + specialization);
+    }
 }
