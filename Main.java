@@ -47,14 +47,16 @@ public class Main {
         System.out.println("Patient added!");
     }
 
+    // V4.0 - Runtime polymorphism via superclass reference
     static void showAll() {
-        System.out.println("\n--- Doctors ---");
-        if (doctors.isEmpty()) System.out.println("None.");
-        for (Doctor d : doctors) d.displayInfo(); // V4.0 - runtime polymorphism
+        System.out.println("\n--- All Personnel ---");
+        ArrayList<Person> everyone = new ArrayList<>();
+        everyone.addAll(doctors);
+        everyone.addAll(patients);
 
-        System.out.println("\n--- Patients ---");
-        if (patients.isEmpty()) System.out.println("None.");
-        for (Patient p : patients) p.displayInfo();
+        for (Person p : everyone) {  // superclass reference
+            p.displayInfo();          // calls Doctor's or Patient's version at runtime
+        }
     }
 
     static void treatPatient() {
@@ -76,8 +78,8 @@ public class Main {
         Doctor  doc = doctors.get(di);
         Patient pat = patients.get(pi);
 
-        // V4.0 - overloaded treat() methods
-        doc.treat(pat.getName());                       
-        doc.treat(pat.getName(), pat.getDisease());     
+        // V4.0 - Compile-time polymorphism (method overloading)
+        doc.treat(pat.getName());                    // overload 1
+        doc.treat(pat.getName(), pat.getDisease());  // overload 2
     }
 }
