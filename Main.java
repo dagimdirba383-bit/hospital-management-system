@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int choice = -1;
+        int choice;
 
         do {
             System.out.println("\n=== Hospital Management System ===");
@@ -20,30 +20,22 @@ public class Main {
             System.out.println("0. Exit");
             System.out.print("Choice: ");
 
-            if (sc.hasNextInt()) {
+            choice = sc.nextInt();
+            sc.nextLine();
 
-                choice = sc.nextInt();
-                sc.nextLine();
+            switch (choice) {
 
-                switch (choice) {
+                case 1 -> addDoctor();
 
-                    case 1 -> addDoctor();
+                case 2 -> addPatient();
 
-                    case 2 -> addPatient();
+                case 3 -> showAll();
 
-                    case 3 -> showAll();
+                case 4 -> treatPatient();
 
-                    case 4 -> treatPatient();
+                case 0 -> System.out.println("Goodbye!");
 
-                    case 0 -> System.out.println("Goodbye!");
-
-                    default -> System.out.println("Invalid choice. Please pick 0-4.");
-                }
-
-            } else {
-
-                System.out.println("Error: Please enter a valid number!");
-                sc.nextLine();
+                default -> System.out.println("Invalid option.");
             }
 
         } while (choice != 0);
@@ -121,13 +113,6 @@ public class Main {
             System.out.println(i + ". " + doctors.get(i).getName());
         }
 
-        if (!sc.hasNextInt()) {
-
-            System.out.println("Invalid input.");
-            sc.nextLine();
-            return;
-        }
-
         int di = sc.nextInt();
         sc.nextLine();
 
@@ -142,13 +127,6 @@ public class Main {
         for (int i = 0; i < patients.size(); i++) {
 
             System.out.println(i + ". " + patients.get(i).getName());
-        }
-
-        if (!sc.hasNextInt()) {
-
-            System.out.println("Invalid input.");
-            sc.nextLine();
-            return;
         }
 
         int pi = sc.nextInt();
@@ -168,3 +146,4 @@ public class Main {
         doc.treat(pat.getName(), pat.getDisease());
     }
 }
+        
