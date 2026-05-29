@@ -98,7 +98,7 @@ When you run the program you get a menu:
 | Method **overriding** | `Doctor.java` line 19 | `@Override displayInfo()` |
 | Method **overriding** | `Patient.java` line 16 | `@Override displayInfo()` |
 | Method **overloading** | `Doctor.java` lines 23–28 | `treat(String)` and `treat(String, String)` |
-| Superclass reference | `Main.java` | `for (Doctor d : doctors) d.displayInfo()` dispatches at runtime |
+| Superclass reference | Main.java showAll() | for (Person p : everyone) p.displayInfo() dispatches Doctor or Patient at runtime |
 
 ---
 
